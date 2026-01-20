@@ -2,15 +2,16 @@
 __pycache__/
 *.pyc
 .venv/
-.venv*/
 .env
 
-# Data (StatCan downloads can be huge)
+# Never commit big StatCan downloads / processed data
 data/raw/
 data/processed/
 
-# Outputs (usually regenerated)
-# outputs/
+# Track charts, ignore other output junk (optional)
+outputs/*
+!outputs/*.png
+!outputs/.gitkeep
 
 # OS/editor
 .DS_Store

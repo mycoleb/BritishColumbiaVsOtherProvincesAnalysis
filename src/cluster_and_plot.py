@@ -28,7 +28,7 @@ def main(
     df = df[(df["year"] >= start_year) & (df["year"] <= end_year)].copy()
 
     if aggregate_to_province:
-        # One row per province (average over years) -> simpler “which province is like BC”
+        # One row per province (average over years) -> simpler â€œwhich province is like BCâ€
         df_model = df.groupby("province", as_index=False).mean(numeric_only=True)
         id_cols = ["province"]
     else:
@@ -75,7 +75,7 @@ def main(
     bc = df_model[df_model["province"] == "British Columbia"]
     if len(bc) > 0:
         ax.scatter(bc["pc1"], bc["pc2"], s=180, marker="o", facecolors="none")
-        ax.set_title("PCA (2D) of Province Similarity — BC highlighted")
+        ax.set_title("PCA (2D) of Province Similarity â€” BC highlighted")
     else:
         ax.set_title("PCA (2D) of Province Similarity")
 
@@ -105,7 +105,7 @@ def main(
     plt.close(fig)
     print(f"Wrote {dendro_path}")
 
-    # --- “Who is BC closest to?” quick printout ---
+    # --- â€œWho is BC closest to?â€ quick printout ---
     if aggregate_to_province and "British Columbia" in df_model["province"].values:
         # Distance to BC in standardized feature space
         bc_vec = Xs[df_model["province"].values.tolist().index("British Columbia")]
