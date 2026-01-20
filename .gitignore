@@ -1,0 +1,18 @@
+﻿# Python
+__pycache__/
+*.pyc
+.venv/
+.venv*/
+.env
+
+# Data (StatCan downloads can be huge)
+data/raw/
+data/processed/
+
+# Outputs (usually regenerated)
+# outputs/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
